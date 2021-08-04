@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IGxsbA==?=
+From: django@gb.local
+To: ll@mr.ru
+Date: Wed, 04 Aug 2021 14:43:00 -0000
+Message-ID: <162808818043.3812.5742794867059182884@alian.planet-a.ru>
+
+Для подтверждения учетной записи lll на портале http://127.0.0.1:8000 перейдите по ссылке: 
+http://127.0.0.1:8000/auth/verify/ll@mr.ru/c163b7c38e2b96c1bd991a5d1513098144e2c9c3/
+-------------------------------------------------------------------------------

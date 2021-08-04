@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IGhoaA==?=
+From: django@gb.local
+To: gg@dgd.ru
+Date: Wed, 04 Aug 2021 12:39:17 -0000
+Message-ID: <162808075784.4652.5829229426741919534@alian.planet-a.ru>
+
+Для подтверждения учетной записи hhh на портале http://localhost:8089 перейдите по ссылке: 
+http://localhost:8089/auth/verify/gg@dgd.ru/75e941673289ac22920a443f7e30720c2f5c0976/
+-------------------------------------------------------------------------------

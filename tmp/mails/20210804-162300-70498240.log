@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IGRk?=
+From: django@gb.local
+To: dd@dd.ru
+Date: Wed, 04 Aug 2021 11:23:00 -0000
+Message-ID: <162807618060.8848.3765836661900651658@alian.planet-a.ru>
+
+Для подтверждения учетной записи dd на портале http://localhost:8080/ перейдите по ссылке: 
+http://localhost:8080//auth/verify/dd@dd.ru/4232b7244af4af1b9dc4854ccc378db5738a2f15
+-------------------------------------------------------------------------------

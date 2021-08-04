@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IHFxcXE=?=
+From: django@gb.local
+To: qqq@qq.rr
+Date: Wed, 04 Aug 2021 12:01:30 -0000
+Message-ID: <162807849044.6932.3220742299354432593@alian.planet-a.ru>
+
+Для подтверждения учетной записи qqqq на портале http://localhost:8080 перейдите по ссылке: 
+http://localhost:8080/auth/verify/qqq@qq.rr/7d7f22b8ef72a35fd706434bf6e300c41c460239/
+-------------------------------------------------------------------------------

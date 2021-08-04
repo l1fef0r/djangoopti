@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IGtraw==?=
+From: django@gb.local
+To: kk@gg.tu
+Date: Wed, 04 Aug 2021 14:24:15 -0000
+Message-ID: <162808705572.1372.8253171794206231015@alian.planet-a.ru>
+
+Для подтверждения учетной записи kkk на портале http://127.0.0.1:8000 перейдите по ссылке: 
+http://127.0.0.1:8000/auth/verify/kk@gg.tu/2e77403f771796949454c15820747bca1b38f1ce/
+-------------------------------------------------------------------------------
