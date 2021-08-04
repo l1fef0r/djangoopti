@@ -48,7 +48,6 @@ def register(request):
 
     if request.method == 'POST':
         register_form = ShopUserRegisterForm(request.POST, request.FILES)
-
         if register_form.is_valid():
             user = register_form.save()
             if send_verify_mail(user):
@@ -81,20 +80,35 @@ def edit(request):
 
 
 def verify(request, email, activation_key):
-    user = ShopUser.objects.filters(email=email).first()
-    if user:
+    try:
+        print(request)
+        print(email)
+        print(activation_key)
+        print('________________________________')
+
+
+        user = ShopUser.objects.filter(email=str(email)).first()
+
+        print(user.email)
+        print(user.activation_key)
         if user.activation_key == activation_key and not user.is_activation_key_expired():
             user.is_active = True
             user.save()
             auth.login(request, user)
-        return render(request, 'authapp/authapp/verify.html')
-    return HttpResponseRedirect(reverse('main'))
+            return render(request, 'authapp/verify.html')
+        else:
+            print(f'error activation user: {user}')
+
+            return render(request, 'authapp/verify.html')
+    except Exception as e:
+        print(f'error activation user : {e.args}')
+        return HttpResponseRedirect(reverse('main'))
 
 
 def send_verify_mail(user):
-    verify_link = reverse('auth:verify', args=[user.email, user.activation_key])
-
     title = f'Подтверждение учетной записи {user.username}'
+
+    verify_link = reverse('auth:verify', args=[user.email, user.activation_key])
 
     message = f'Для подтверждения учетной записи {user.username} на портале {settings.DOMAIN} перейдите по ссылке: \n{settings.DOMAIN}{verify_link}'
 

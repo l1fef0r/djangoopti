@@ -1,4 +1,4 @@
-{% extend 'authapp/base.html %}
+{% extends 'authapp/base.html' %}
 {% block content %}
     {% if user.is_authenticated %}
         <h3>Поздравляем!!!</h3>
@@ -7,5 +7,5 @@
         <h3>Не поздравляем!!!</h3>
         <div>Пользователь {{ user.email }} не активирован</div>
     {% endif %}
-
+    <a href="{%url 'main' %}" class="btn btn-primary">на главную</a>
 {% endblock %}

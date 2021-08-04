@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IGJiYg==?=
+From: django@gb.local
+To: sddf@f.ru
+Date: Wed, 04 Aug 2021 13:03:23 -0000
+Message-ID: <162808220313.9188.15261244165984364891@alian.planet-a.ru>
+
+Для подтверждения учетной записи bbb на портале http://127.0.0.1:8000 перейдите по ссылке: 
+http://127.0.0.1:8000/auth/verify/sddf@f.ru/31b0b3cc299c9c1f2fe093042bbd925b043dabc6/
+-------------------------------------------------------------------------------
