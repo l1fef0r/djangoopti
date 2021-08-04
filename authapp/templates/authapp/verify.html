@@ -1,0 +1,11 @@
+{% extend 'authapp/base.html %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <h3>Поздравляем!!!</h3>
+        <div>Пользователь {{ user.email }} успещшно активирован</div>
+    {% else %}
+        <h3>Не поздравляем!!!</h3>
+        <div>Пользователь {{ user.email }} не активирован</div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IHNkcw==?=
+From: django@gb.local
+To: alexunder.stepanoff@gmail.com
+Date: Wed, 04 Aug 2021 10:43:07 -0000
+Message-ID: <162807378773.9212.6514482259701681112@alian.planet-a.ru>
+
+Для подтверждения учетной записи sds на портале http://localhost:8080/ перейдите по ссылке: 
+http://localhost:8080//auth/verify/alexunder.stepanoff@gmail.com/1ab0b00f1e6ce04c11d10ac90f583cc43a1e8406
+-------------------------------------------------------------------------------
