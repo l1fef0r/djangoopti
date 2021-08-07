@@ -1,3 +1,4 @@
 .idea/
 .venv/
 .django_2.0
+.env
