@@ -12,7 +12,7 @@ from django.http import JsonResponse
 def basket(request):
     title = 'корзина'
     
-    basket_items = Basket.objects.filter(user=request.user).order_by('product__category')
+    basket_items = Basket.get_items(user=request.user)
     
     content = {
         'title': title,
@@ -24,13 +24,11 @@ def basket(request):
  
 @login_required
 def basket_add(request, pk):
-    print(request)
-    print(pk)
     if 'login' in request.META.get('HTTP_REFERER'):
         return HttpResponseRedirect(reverse('products:product', args=[pk]))
     
     product = get_object_or_404(Product, pk=pk)
-    basket = Basket.objects.filter(user=request.user, product=product).first()
+    basket = Basket.get_product(user=request.user, product=product).first()
 
     if not basket:
         basket = Basket(user=request.user, product=product)
