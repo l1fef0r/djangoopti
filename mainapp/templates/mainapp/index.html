@@ -15,7 +15,7 @@
                 заказать
                 <img src="{% static 'img/arrow.png' %}" alt="">
             </a>
-        </div>	
+        </div>
         <div class="navi">
             <a href="#"></a><a href="#"></a><a href="#"></a>
         </div>
@@ -35,7 +35,7 @@
             {% for product in products %}
                 <div class="block">
                     <a href="{% url 'products:product' product.pk %}">
-                        <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}"> 
+                        <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
                         <div class="text">
                             <img src="{% static 'img/icon-hover.png' %}" alt="img">
                             <h3>Категория:{{ product.category.name }}</h3>
@@ -43,12 +43,12 @@
                             <p>Описание: {{ product.description }} </p>
                             <p>Цена: {{ product.price }} </p>
                             <p>На складе: {{ product.quantity }} </p>
-                        </div> 
+                        </div>
                     </a>
                 </div>
-            {% endfor %}	
+            {% endfor %}
         </div>
     </div>
-    
+
     <div class="clr"></div>
 {% endblock %}
