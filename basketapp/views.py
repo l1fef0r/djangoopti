@@ -13,7 +13,6 @@ def basket(request):
     title = 'корзина'
     
     basket_items = Basket.get_items(user=request.user)
-    
     content = {
         'title': title,
         'basket_items': basket_items,
@@ -28,13 +27,13 @@ def basket_add(request, pk):
         return HttpResponseRedirect(reverse('products:product', args=[pk]))
     
     product = get_object_or_404(Product, pk=pk)
-    basket = Basket.get_product(user=request.user, product=product).first()
+    _basket = Basket.get_product(user=request.user, product=product).first()
 
-    if not basket:
-        basket = Basket(user=request.user, product=product)
+    if not _basket:
+        _basket = Basket(user=request.user, product=product)
 
-    basket.quantity += 1
-    basket.save()
+    _basket.quantity += 1
+    _basket.save()
     
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     
