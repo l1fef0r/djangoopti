@@ -3,14 +3,6 @@ from django.db import models
 
 from mainapp.models import Product
 
-class OrderItemQuerySet(models.QuerySet):
-    def delete(self, *args, **kwargs):
-        for object in self:
-            object.product.quantity += object.quantity
-            object.product.save()
-        super(OrderItemQuerySet, self).delete(*args, **kwargs)
-
-
 class Order(models.Model):
     FORMING = 'FM'
     SENT_TO_PROCEED = 'STP'
@@ -55,7 +47,6 @@ class Order(models.Model):
         verbose_name_plural = 'заказы'
 
 class OrderItem(models.Model):
-    objects = OrderItemQuerySet.as_manager()
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='orderitems')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=0)
@@ -63,3 +54,7 @@ class OrderItem(models.Model):
     @property
     def get_product_cost(self):
         return self.quantity * self.product.price
+
+    @staticmethod
+    def get_product(user, product):
+        return OrderItem.objects.filter(user=user, product=product)
