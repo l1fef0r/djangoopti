@@ -140,6 +140,6 @@ def product_price(request, pk):
         print(product_item)
 
         if product_item:
-            return JsonResponse({'pice': product_item.price})
+            return JsonResponse({'price': product_item.price})
 
         return JsonResponse({'price': 0})

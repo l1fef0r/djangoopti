@@ -26,18 +26,30 @@ class Order(models.Model):
     def __str__(self):
         return f'Заказ номер {self.pk}'
 
+    def get_product_type_quantity(self):
+        items = self.orderitems.select_related()
+        return len(items)
+
     def get_total_quantity(self):
         items = self.orderitems.select_related()
         return sum(list(map(lambda x: x.quantity, items)))
 
     def get_total_cost(self):
         items = self.orderitems.select_related()
-        return sum(list(map(lambda x: x.get_product_cost, items)))
+        return sum(list(map(lambda x: x.quantity * x.product.price, items)))
+
+    def get_summary(self):
+        items = self.orderitems.select_related()
+        return {
+            'total_quantity': sum(list(map(lambda x: x.quantity, items))),
+            'total_cost': sum(list(map(lambda x: x.quantity * x.product.price, items)))
+        }
 
     def delete(self):
         for item in self.orderitems.select_related():
             item.product.quantity += item.quantity
             item.product.save()
+
         self.is_active = False
         self.save()
 
@@ -47,9 +59,9 @@ class Order(models.Model):
         verbose_name_plural = 'заказы'
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='orderitems')
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.IntegerField(default=0)
+    order = models.ForeignKey(Order, related_name='orderitems', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product,  verbose_name='продукты', on_delete=models.CASCADE)
+    quantity = models.IntegerField(verbose_name='количесто', default=0)
 
     @property
     def get_product_cost(self):
