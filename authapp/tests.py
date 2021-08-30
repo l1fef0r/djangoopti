@@ -53,7 +53,7 @@ class TestUserManagement(TestCase):
         activation_url = f'{settings.DOMAIN_NAME}/verify/{new_user_data["email"]}/{new_user.activation_key}'
 
         response = self.client.get(activation_url)
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 301)
 
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)

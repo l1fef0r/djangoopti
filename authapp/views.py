@@ -83,11 +83,18 @@ def edit(request):
     
     return render(request, 'authapp/edit.html', content)
 
+def send_verify_mail(user):
+    title = f'Подтверждение учетной записи {user.username}'
+
+    verify_link = reverse('auth:verify', args=[user.email, user.activation_key])
+
+    message = f'Для подтверждения учетной записи {user.username} на портале {settings.DOMAIN} перейдите по ссылке: \n{settings.DOMAIN}{verify_link}'
+
+    return send_mail(title, message, settings.EMAIL_HOST_USER, [user.email], fail_silently=False)
 
 def verify(request, email, activation_key):
     try:
         user = ShopUser.objects.get(email=email)
-
         if user.activation_key == activation_key and not user.is_activation_key_expired():
             user.is_active = True
             user.save()
@@ -101,13 +108,3 @@ def verify(request, email, activation_key):
         print(f'error activation user : {e.args}')
 
     return HttpResponseRedirect(reverse('main'))
-
-
-def send_verify_mail(user):
-    title = f'Подтверждение учетной записи {user.username}'
-
-    verify_link = reverse('auth:verify', args=[user.email, user.activation_key])
-
-    message = f'Для подтверждения учетной записи {user.username} на портале {settings.DOMAIN} перейдите по ссылке: \n{settings.DOMAIN}{verify_link}'
-
-    return send_mail(title, message, settings.EMAIL_HOST_USER, [user.email], fail_silently=False)
